@@ -56,11 +56,12 @@ def plot_performance_comparison(data, exercise, individual_name):
 
 def plot_individual_performance_over_time(data, individual_name, exercise):
     individual_data = data[data['Name'] == individual_name].sort_values('Event Date')
-    plt.plot(individual_data['Event Date'], individual_data[exercise])
+    plt.scatter(individual_data['Event Date'], individual_data[exercise])
     plt.title(f'Performance Over Time for {individual_name} in {exercise}')
     plt.xlabel('Event Date')
     plt.ylabel(exercise)
     plt.show()
+
 
 def update_plot():
     selected_name = name_var.get()
